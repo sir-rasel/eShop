@@ -1,0 +1,93 @@
+[
+    {
+        "id": "1",
+        "title": "Air-condition",  
+        "description": "Vision Air-condition super electronic saver",
+        "price": "300.00",
+        "image": "/images/ac.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Camera",  
+        "description": "Canon 32 mega pixel camera",
+        "price": "180.00",
+        "image": "/images/camera.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Chair",  
+        "description": "Partex super coll chair",
+        "price": "50.00",
+        "image": "/images/chair.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Hair Oil",  
+        "description": "Hair Oil that can cool your head and give relax",
+        "price": "20.00",
+        "image": "/images/hairOil.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Jam",  
+        "description": "Tasty and healty jam",
+        "price": "10.00",
+        "image": "/images/jam.jpg"
+    },
+    {
+        "id": "6",
+        "title": "Lipstick",  
+        "description": "Multi colored Lipstick for long lasting fashion",
+        "price": "5.00",
+        "image": "/images/lipstick.jpg"
+    },
+    {
+        "id": "7",
+        "title": "Mackbook",  
+        "description": "Apple mackbook pro",
+        "price": "900.00",
+        "image": "/images/mackbook.jpg"
+    },
+    {
+        "id": "8",
+        "title": "Mobile",  
+        "description": "Apple Mobile phone Iphone-X pro",
+        "price": "500.00",
+        "image": "/images/mobile.jpg"
+    },
+    {
+        "id": "9",
+        "title": "Nike Shoe",  
+        "description": "Stylish red nike shoe",
+        "price": "150.00",
+        "image": "/images/nikeShoe.jpg"
+    },
+    {
+        "id": "10",
+        "title": "Mango Pickle",  
+        "description": "Pran Mango Pickle by BD food",
+        "price": "15.00",
+        "image": "/images/pickle.jpg"
+    },
+    {
+        "id": "11",
+        "title": "Shoe",  
+        "description": "Stylish Ladies Shoe",
+        "price": "40.00",
+        "image": "/images/shoe.jpg"
+    },
+    {
+        "id": "12",
+        "title": "Smart Shoe",  
+        "description": "Apple Smart Watch",
+        "price": "300.00",
+        "image": "/images/smartWatch.jpg"
+    },
+    {
+        "id": "13",
+        "title": "Rolex Watch",  
+        "description": "Rolex Man hand watch",
+        "price": "200.00",
+        "image": "/images/watch.jpg"
+    }
+  ]
