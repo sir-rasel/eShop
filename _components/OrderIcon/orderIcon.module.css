@@ -1,0 +1,19 @@
+.orderIcon {
+    width: 70px;
+}
+
+.orderIcon a {
+    color:red;
+    position: relative;
+    bottom: 15px;
+    left: 5px;
+}
+
+.orderIcon a:hover{
+    color:blue;
+}
+
+.orderIcon img {
+    width: 50px;
+    height: 50px;
+}

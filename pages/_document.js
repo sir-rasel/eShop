@@ -14,8 +14,6 @@ class CustomDocument extends Document {
             <meta name="keywords" content="React, Next, Eshop, Ecommerce" />
             <meta name="description" content="Online Shop" />
             <meta name="author" content="Saiful Islam Rasel" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title> eShop </title>
         </Head>
         <body>
           <Main />

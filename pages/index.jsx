@@ -1,9 +1,14 @@
+import  Head  from 'next/head'
 import Link from 'next/link'
 import styles from './../styles/Home.module.css'
 
 export default function Home() {
   return (
     <>
+      <Head>
+          <title> Products List </title>
+      </Head>
+      
       <h2>This is home page!!</h2>
       
       <h1 className={styles.title}>

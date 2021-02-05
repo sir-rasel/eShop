@@ -14,3 +14,32 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#__next {
+  width: 800px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 10px auto;
+  border: 1px solid gray;
+  padding: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  #__next {
+    width: 600px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #__next {
+    width: 500px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  #__next {
+    width: 300px;
+  }
+}

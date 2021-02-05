@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    background-color: lightgray;
+    align-items: center;
+    padding: 5px;
+}
+
+.header div:first-child {
+    flex-grow: 1;
+}
