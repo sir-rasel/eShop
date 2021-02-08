@@ -1,0 +1,12 @@
+.container td {
+    padding: 10px;
+}
+
+.remove {
+    background-color: red;
+    color: white;
+}
+
+.remove:hover {
+    background-color: blue;
+}

@@ -1,0 +1,18 @@
+.customer {
+    text-align: center;
+    align-content: center;
+    line-height: 2rem;
+    background-color: lightcyan;
+    padding: 5px;
+}
+
+.customer input[type = "submit"] {
+    background-color: lightgreen;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.customer input[type = "submit"]:hover {
+    background-color: red;
+    color: white;
+}

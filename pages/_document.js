@@ -10,7 +10,7 @@ class CustomDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-            <meta charset="UTF-8" />
+            <meta charSet="UTF-8" />
             <meta name="keywords" content="React, Next, Eshop, Ecommerce" />
             <meta name="description" content="Online Shop" />
             <meta name="author" content="Saiful Islam Rasel" />

@@ -1,5 +1,5 @@
 import  Head  from 'next/head'
-import Link from 'next/link'
+import CustomerInfo from '../../_components/CustomerInfo/customerInfo'
 
 export default function Home() {
   return (
@@ -7,14 +7,7 @@ export default function Home() {
       <Head>
           <title> Checkout Order </title>
       </Head>
-      <h2>This is home page!!</h2>
-      
-      <h1 className="title">
-        Read{' '}
-        <Link href="/cart">
-          Cart page!
-        </Link>
-      </h1>
+      <CustomerInfo />
     </>
   )
 }

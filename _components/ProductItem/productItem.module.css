@@ -1,0 +1,26 @@
+.card {
+    width: auto;
+    height: auto;
+    box-shadow: #00000021 2px 2px 15px;
+    margin: 1rem;
+    border-radius: 7px;
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    padding: 1rem;
+    background-color:lightgrey;
+}
+
+.details {
+    padding: .6rem .7rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    margin-left: 3px;
+}

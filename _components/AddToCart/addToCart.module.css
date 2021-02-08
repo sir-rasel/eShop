@@ -1,0 +1,31 @@
+.addToCartButton {
+    width: max-content;
+    background-color: red;
+    color: blue;
+    text-align: center;
+    padding: 5px;
+    margin: 2px auto;
+}
+
+.addToCartButton:hover {
+    color: red;
+    background-color: royalblue;
+}
+
+.minus, .plus {
+    background-color: black;
+    color: white;
+}
+
+.minus:hover, .plus:hover {
+    color: black;
+    background-color: white;
+}
+
+.text {
+    font-weight: bolder;
+}
+
+.text:hover{
+    background-color: lightgray;
+}

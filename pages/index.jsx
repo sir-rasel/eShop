@@ -1,31 +1,30 @@
 import  Head  from 'next/head'
-import Link from 'next/link'
+import ProductItem from '../_components/ProductItem/productItem'
 import styles from './../styles/Home.module.css'
+import Products from './../_utilities/products.json'
 
-export default function Home() {
+export default function Home({products}) {
   return (
     <>
       <Head>
-          <title> Products List </title>
+        <title> Products List </title>
       </Head>
       
-      <h2>This is home page!!</h2>
-      
-      <h1 className={styles.title}>
-        <Link href="/cart">
-          Cart page!
-        </Link>
-      </h1>
-      <h1 className={styles.title}>
-        <Link href="/orders">
-          Orders page!
-        </Link>
-      </h1>
-      <h1 className={styles.title}>
-        <Link href="/productDetails">
-          Product Details page!
-        </Link>
-      </h1>
+      <div className={styles.container}>
+        {
+          products.map( (product) => {
+            return <ProductItem key={product.id} product={product} />
+          })
+        }
+      </div>
     </>
   )
+}
+
+export const getStaticProps = async => {
+  return {
+    props: {
+      products: Products
+    }
+  }
 }

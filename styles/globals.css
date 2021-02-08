@@ -25,6 +25,11 @@ a {
   padding: 5px;
 }
 
+.container {
+  margin: 5px;
+  padding: 5px;
+}
+
 @media only screen and (max-width: 800px) {
   #__next {
     width: 600px;
