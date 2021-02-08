@@ -1,0 +1,9 @@
+.container td {
+    padding: 10px;
+    text-align: center;
+}
+
+.container:hover {
+    background-color: lightcyan;
+    color: darkblue;
+}

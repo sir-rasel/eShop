@@ -1,11 +1,10 @@
-import ProductDetails from "../../_components/ProductDetails/productDetails";
-import Products from './../../_utilities/products.json'
 import Link from 'next/link'
+import OrderDetails from "../../_components/OrderDetails/orderDetails";
 
-export default function ProductDetailsPage({product}){
+export default function OrderDetailsPage({order}){
     return (
         <>
-            <ProductDetails product={product}/>
+            <OrderDetails order={order}/>
             <h2 className="back">
                 <Link href="/">
                 Back to shoping!!
@@ -31,25 +30,31 @@ export default function ProductDetailsPage({product}){
 }
 
 export const getStaticProps = async(context)=>{
-    let product;
-    Products.map(item=>{
-        if(item.id === context.params.id){
-            product = item
+    const res = await fetch(`http://localhost:3000/api/orders`)
+    const orders = await res.json()
+    
+    let order;
+    orders.map(item=>{
+        if(item.id.toString() === context.params.id){
+            order = item
         }
     })
     
     return {
       props: {
-        product
+        order
       }
     }
 }
 
 export const getStaticPaths = async()=>{
-    const paths = Products.map(product => (
+    const res = await fetch(`http://localhost:3000/api/orders`)
+    const orders = await res.json()
+
+    const paths = orders.map(order => (
         { 
             params: {
-                id : product.id.toString()
+                id : order.id.toString()
             } 
         }
     ))
