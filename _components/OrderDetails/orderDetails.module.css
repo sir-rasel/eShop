@@ -1,0 +1,10 @@
+.container {
+    border: 1px solid black;
+    width: max-content;
+    padding: 5px 15px;
+    margin: 0 auto;
+}
+
+.container table {
+    text-align: center;
+}
