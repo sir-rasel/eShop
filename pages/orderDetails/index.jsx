@@ -8,7 +8,7 @@ export default function Home() {
           <title> Order Details </title>
       </Head>
 
-      <h2>This is home page!!</h2>
+      <h2>This is order details page!!</h2>
       
       <h1 className="title">
         Read{' '}

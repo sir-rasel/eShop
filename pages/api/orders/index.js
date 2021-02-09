@@ -1,5 +1,3 @@
-import { useCartContext } from '../../../_ContextProvider/cartProvider';
-
 let fs = require('fs'); 
 
 export default (req, res) => {

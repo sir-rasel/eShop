@@ -1,6 +1,6 @@
-import CartIcon from '../CartIcon/CartIcon'
-import HomeIcon from '../HomeIcon/HomeIcon'
-import OrderIcon from '../OrderIcon/OrderIcon'
+import CartIcon from '../CartIcon/cartIcon'
+import HomeIcon from '../HomeIcon/homeIcon'
+import OrderIcon from '../OrderIcon/orderIcon'
 
 import styles from './header.module.css'
 
