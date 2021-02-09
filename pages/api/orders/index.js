@@ -1,3 +1,5 @@
+import { useCartContext } from '../../../_ContextProvider/cartProvider';
+
 let fs = require('fs'); 
 
 export default (req, res) => {
@@ -6,8 +8,6 @@ export default (req, res) => {
         let orders = JSON.parse(data)
         let newOrder = JSON.parse(req.body)
         newOrder.id = orders.length + 1
-
-        console.log(newOrder)
 
         fs.writeFile("_utilities/orders.json",JSON.stringify([...orders,newOrder]),
           (err)=>{if(err)console.log(err)})

@@ -3,6 +3,7 @@ import Head from 'next/head'
 import '../styles/globals.css'
 import Layout from '../_components/Layout/Layout'
 import CartProvider from '../_ContextProvider/cartProvider'
+import OrderLengthProvider from '../_ContextProvider/orderLengthProvider'
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -14,11 +15,13 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <CartProvider>
-        <Layout >
-          <div className="container">
-            <Component {...pageProps} />
-          </div>
-        </Layout>
+        <OrderLengthProvider>
+          <Layout >
+            <div className="container">
+              <Component {...pageProps} />
+            </div>
+          </Layout>
+          </OrderLengthProvider>
       </CartProvider>
 
     </React.Fragment>

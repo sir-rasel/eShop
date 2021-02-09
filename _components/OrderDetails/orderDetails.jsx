@@ -1,6 +1,10 @@
+import { useOrderLengthContext } from '../../_ContextProvider/orderLengthProvider'
 import styles from './OrderDetails.module.css'
 
 export default function OrderDetails({order}){
+    const {updateLength} = useOrderLengthContext()
+    updateLength()
+    
     return (
         <div className={styles.container}>
             <p>Order ID: {order.id}</p>
