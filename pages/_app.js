@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import '../styles/globals.css'
-import Layout from '../_components/Layout/Layout'
+import Layout from '../_components/Layout/layout'
 import CartProvider from '../_ContextProvider/cartProvider'
 import OrderLengthProvider from '../_ContextProvider/orderLengthProvider'
 
