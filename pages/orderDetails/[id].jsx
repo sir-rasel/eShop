@@ -29,11 +29,11 @@ export default function OrderDetailsPage({order}){
     )
 }
 
-export const getStaticProps = async(context)=>{
+export const getServerSideProps = async(context)=>{
     const res = await fetch(`http://localhost:3000/api/orders`)
     const orders = await res.json()
     
-    let order;
+    let order = null;
     orders.map(item=>{
         if(item.id.toString() === context.params.id){
             order = item
@@ -47,20 +47,38 @@ export const getStaticProps = async(context)=>{
     }
 }
 
-export const getStaticPaths = async()=>{
-    const res = await fetch(`http://localhost:3000/api/orders`)
-    const orders = await res.json()
+// export const getStaticProps = async(context)=>{
+//     const res = await fetch(`http://localhost:3000/api/orders`)
+//     const orders = await res.json()
+    
+//     let order;
+//     orders.map(item=>{
+//         if(item.id.toString() === context.params.id){
+//             order = item
+//         }
+//     })
+    
+//     return {
+//       props: {
+//         order
+//       }
+//     }
+// }
 
-    const paths = orders.map(order => (
-        { 
-            params: {
-                id : order.id.toString()
-            } 
-        }
-    ))
+// export const getStaticPaths = async()=>{
+//     const res = await fetch(`http://localhost:3000/api/orders`)
+//     const orders = await res.json()
 
-    return {
-        paths, 
-        fallback: false
-    }
-}
+//     const paths = orders.map(order => (
+//         { 
+//             params: {
+//                 id : order.id.toString()
+//             } 
+//         }
+//     ))
+
+//     return {
+//         paths, 
+//         fallback: false
+//     }
+// }
