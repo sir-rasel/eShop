@@ -1,5 +1,4 @@
 import ProductDetails from "../../_components/ProductDetails/productDetails";
-import Products from './../../_utilities/products.json'
 import Link from 'next/link'
 
 export default function ProductDetailsPage({product}){
@@ -30,13 +29,22 @@ export default function ProductDetailsPage({product}){
     )
 }
 
-export const getStaticProps = async(context)=>{
-    let product;
+export const getServerSideProps = async(context)=>{
+    const res = await fetch(`http://localhost:3000/api/products`)
+    const Products = await res.json()
+
+    let product = null;
     Products.map(item=>{
         if(item.id === context.params.id){
             product = item
         }
     })
+
+    if(product === null){
+        context.res.setHeader("location", "/404");
+        context.res.statusCode = 302;
+        context.res.end();
+    }
     
     return {
       props: {
@@ -45,17 +53,17 @@ export const getStaticProps = async(context)=>{
     }
 }
 
-export const getStaticPaths = async()=>{
-    const paths = Products.map(product => (
-        { 
-            params: {
-                id : product.id.toString()
-            } 
-        }
-    ))
+// export const getStaticPaths = async()=>{
+//     const paths = Products.map(product => (
+//         { 
+//             params: {
+//                 id : product.id.toString()
+//             } 
+//         }
+//     ))
 
-    return {
-        paths, 
-        fallback: false
-    }
-}
+//     return {
+//         paths, 
+//         fallback: false
+//     }
+// }

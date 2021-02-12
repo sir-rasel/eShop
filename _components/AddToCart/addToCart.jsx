@@ -7,8 +7,11 @@ const reducer = (state, action) => {
         return {quantity: state.quantity - 1}
     else if(action.type === 'init')
         return {quantity: action.quantity}
-    else 
-        return {quantity: state.quantity + 1}
+    else {
+        if(state.quantity + 1 > action.stock)
+            return {quantity: state.quantity}
+        else return {quantity : state.quantity + 1}
+    }
 }
 
 export default function AddToCartButton({product}){
@@ -50,15 +53,19 @@ export default function AddToCartButton({product}){
         <div className={styles.addToCartButton}>
             {
                 state.quantity >= 1 ? 
-                <button className={styles.minus} onClick={() => dispatch({type:'-'})}>-</button>
+                <button className={styles.minus} onClick={() => dispatch({type:'-', stock:product.stock})}>-</button>
                 : null
             }
             {
-                state.quantity == 0 ? 
-                <button className={styles.text} onClick={()=> dispatch({type:'+'})}>Add To Cart</button>
-                :<button className={styles.text}>{state.quantity}</button>
+                state.quantity === 0 && product.stock? 
+                <button className={styles.text} onClick={()=> dispatch({type:'+', stock:product.stock})}>Add To Cart</button>
+                : <button className={styles.text}>{state.quantity}</button>
             }
-            <button className={styles.minus} onClick={() => dispatch({type:'+'})}>+</button>
+            {
+                state.quantity < product.stock?
+                <button className={styles.minus} onClick={() => dispatch({type:'+', stock:product.stock})}>+</button>
+                : null
+            } 
         </div>
     )
 }

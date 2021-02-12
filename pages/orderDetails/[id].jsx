@@ -39,6 +39,12 @@ export const getServerSideProps = async(context)=>{
             order = item
         }
     })
+
+    if(order === null){
+        context.res.setHeader("location", "/404");
+        context.res.statusCode = 302;
+        context.res.end();
+    }
     
     return {
       props: {

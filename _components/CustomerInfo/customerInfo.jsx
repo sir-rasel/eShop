@@ -6,22 +6,57 @@ export default function CustomerInfo(){
     const {cart, addToCart} = useCartContext()
     const router = useRouter()
 
-    let totalPrice = 0
-    const orderedProduct = cart.map(item =>{
-        let price = (parseFloat(item.price) * parseInt(item.quantity))
-        totalPrice += price
-        return {...item, price:price}
-    })
-
-    const handleSubmit = (event) => {
+    const handleSubmit = async event => {
         event.preventDefault()
         
+        let totalPrice = 0
+        const orderedProduct = cart.map(item =>{
+            let price = (parseFloat(item.price) * parseInt(item.quantity))
+            totalPrice += price
+            return {...item, price:price}
+        })
+
         let customer = {
             name : event.target.name.value,
             phone : event.target.phone.value,
             address : event.target.address.value
         }
 
+        //handle products data via api
+        const res = await fetch(`http://localhost:3000/api/products`)
+        const products = await res.json()
+
+        let arr = []
+        cart.forEach(item => {
+            products.forEach(product => {
+                if(product.id === item.id){
+                    if(product.stock < item.quantity){
+                        arr.push(item.id)
+                    }
+                    else{
+                        product.stock -= item.quantity
+                    }
+                }
+            })
+        })
+
+        if(arr.length){
+            alert(`Products ${arr.toString()} out of stock, please reduce quantity.`)
+            return
+        }
+        else {
+            fetch('http://localhost:3000/api/products',{
+                method: 'POST',
+                body: JSON.stringify(
+                    products
+                )
+            }).then(res=>{
+                if(res.status !== 201){
+                    alert("Network Error!")
+                }
+            })
+        }
+        // handle orders data via api
         fetch('http://localhost:3000/api/orders',{
             method: 'POST',
             body: JSON.stringify({

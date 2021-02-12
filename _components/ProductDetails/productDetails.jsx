@@ -9,6 +9,7 @@ export default function ProductDetails({product}){
             <p><strong>Tittle :</strong> {product.title}</p>
             <p><strong>Description :</strong> {product.description}</p>
             <p><strong>Price :</strong> {product.price} $</p>
+            <p><strong>In stock :</strong> {product.stock}</p>
             
             <AddToCartButton product={product}/>
         </div>

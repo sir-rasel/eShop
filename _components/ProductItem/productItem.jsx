@@ -11,6 +11,7 @@ export default function ProductItem ({product}) {
                         <div className={styles.details}>
                             <span>{product.name}</span>
                             <span className={styles.price}><strong>Price : </strong> {product.price} $ </span>
+                            <span className={styles.price}><strong>In stock : </strong> {product.stock}</span>
                         </div>
                     </div>
             </Link>

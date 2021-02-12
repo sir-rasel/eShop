@@ -9,7 +9,9 @@ export default function CartItem({product}){
         if(type === '+'){
             let newCart = cart.map(prod => {
                 if(prod.id === product.id){
-                    prod.quantity = prod.quantity + 1
+                    if(prod.quantity + 1 <= product.stock)
+                        prod.quantity = prod.quantity + 1
+                    else alert(`Out of stock, product availabe ${product.stock}`)
                 }
                 return prod
             })
